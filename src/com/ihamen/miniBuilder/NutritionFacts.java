@@ -1,4 +1,4 @@
-package com.ihamen;
+package com.ihamen.miniBuilder;
 
 // паттерн Builder
 public class NutritionFacts {

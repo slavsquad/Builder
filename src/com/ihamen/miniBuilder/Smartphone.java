@@ -1,4 +1,4 @@
-package com.ihamen;
+package com.ihamen.miniBuilder;
 
 /**
  * Created by stepanenko.sg on 17.09.2017.
@@ -12,6 +12,33 @@ public class Smartphone {
     private final float backCamera;
     private final float frontCamera;
 
+    //Getter methods
+    public String getModel() {
+        return model;
+    }
+
+    public float getDisplaySize() {
+        return displaySize;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getBatteryVolume() {
+        return batteryVolume;
+    }
+
+    public float getBackCamera() {
+        return backCamera;
+    }
+
+    public float getFrontCamera() {
+        return frontCamera;
+    }
+
+
+    //Static nested class - статический вложенный класс Строитель
     public static class Builder{
         //Обязательные параметры
         //Поле model final т.к. явзяется не изменяемым параметром, метод setModel отсутсвует.
@@ -23,7 +50,7 @@ public class Smartphone {
         private float backCamera = 12.0f;
         private float frontCamera = 5.0f;
 
-        Builder(String model){
+        public Builder(String model){
             this.model = model;
         }
 
@@ -57,6 +84,7 @@ public class Smartphone {
         }
 
     }
+    //Smartphone object creates only by Builder
     private Smartphone(Builder builder){
         this.model = builder.model;
         this.displaySize = builder.displaySize;
